@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 426572102}
   - component: {fileID: 426572101}
   - component: {fileID: 426572100}
+  - component: {fileID: 426572103}
   m_Layer: 5
   m_Name: Be Creative Button
   m_TagString: Untagged
@@ -184,7 +185,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.53333336, g: 0.54509807, b: 0.8862745, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -206,7 +207,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 426572101}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 426572103}
+        m_TargetAssemblyTypeName: ActivatePanel, Assembly-CSharp
+        m_MethodName: TransitionToNextPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &426572101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +258,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426572098}
   m_CullTransparentMesh: 1
+--- !u!114 &426572103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426572098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5290254508dd014e9774bb2ef8ba9c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToDeactivate: {fileID: 663845991}
+  objectToActivate: {fileID: 0}
 --- !u!1 &539594445
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +368,7 @@ GameObject:
   - component: {fileID: 614821523}
   - component: {fileID: 614821522}
   - component: {fileID: 614821521}
+  - component: {fileID: 614821524}
   m_Layer: 5
   m_Name: Tutorial Button
   m_TagString: Untagged
@@ -390,7 +418,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.81960785, g: 0.45882353, b: 0.46666667, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -412,7 +440,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 614821522}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 614821524}
+        m_TargetAssemblyTypeName: ActivatePanel, Assembly-CSharp
+        m_MethodName: TransitionToNextPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &614821522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,6 +491,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614821519}
   m_CullTransparentMesh: 1
+--- !u!114 &614821524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614821519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5290254508dd014e9774bb2ef8ba9c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToDeactivate: {fileID: 663845991}
+  objectToActivate: {fileID: 0}
 --- !u!1 &654479696
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,7 +654,7 @@ GameObject:
   - component: {fileID: 663845994}
   - component: {fileID: 663845993}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: First Time
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
