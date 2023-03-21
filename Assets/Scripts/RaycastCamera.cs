@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RaycastCamera : MonoBehaviour
 {
-    public Vector3 screenPosition;
-    public Vector3 worldPosition;
-    public LayerMask layersToHit;
+    //  public Vector3 screenPosition;
+    //  public Vector3 worldPosition;
+    //   public LayerMask layersToHit;
 
-    Ray ray;
-    RaycastHit hit;
+   // Ray cameraRay;
+   //  RaycastHit hit;
+
+    public Text objectLabel;
 
     // Start is called before the first frame update
     void Start()
@@ -20,18 +23,31 @@ public class RaycastCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) ;
-
-         screenPosition = Input.mousePosition;
-
-         Ray ray = Camera.main.ScreenPointToRay(screenPosition);
-
-        if (Physics.Raycast(ray, out RaycastHit hitData, layersToHit))
+        if (Input.GetMouseButtonDown(0))
         {
-            worldPosition = hitData.point;
+            Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycasyHit hit;
+
+            if (Physics.Raycast(cameraRay, out RaycastHit hitObject))
+            {
+                Debug.DrawRay(ray.origin, ray.direction * 10);
+                Debug.Log(hitObject.collider.gameObject.name + " was hit");
+                objectLabel.text = hitObject.collider.gameObject.name;
+            }
         }
 
-         transform.position = worldPosition;
+
+
+       //  screenPosition = Input.mousePosition;
+
+       //  Ray ray = Camera.main.ScreenPointToRay(screenPosition);
+
+       // if (Physics.Raycast(ray, out RaycastHit hitData, layersToHit))
+       // {
+      //      worldPosition = hitData.point;
+      //  }
+
+       //  transform.position = worldPosition;
    
     }
 
