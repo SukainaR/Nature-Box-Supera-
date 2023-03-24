@@ -9,8 +9,9 @@ public class RaycastCamera : MonoBehaviour
     //  public Vector3 worldPosition;
     //   public LayerMask layersToHit;
 
-   // Ray cameraRay;
-   //  RaycastHit hit;
+    // Ray cameraRay;
+    //  RaycastHit hit;
+    public float rayDistance = 10.0f;
 
     public Text objectLabel;
 
@@ -23,32 +24,35 @@ public class RaycastCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycasyHit hit;
 
-            if (Physics.Raycast(cameraRay, out RaycastHit hitObject))
+        Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        Debug.DrawRay(cameraRay.origin, cameraRay.direction * rayDistance);
+
+        if (Physics.Raycast(cameraRay, out hit, rayDistance))
+        {
+            if (Input.GetMouseButtonDown(0))
             {
-                Debug.DrawRay(ray.origin, ray.direction * 10);
-                Debug.Log(hitObject.collider.gameObject.name + " was hit");
-                objectLabel.text = hitObject.collider.gameObject.name;
+                Debug.Log(hit.collider.gameObject.name + " was hit");
+                //objectLabel.text = hitObject.collider.gameObject.name;
             }
         }
 
 
 
-       //  screenPosition = Input.mousePosition;
 
-       //  Ray ray = Camera.main.ScreenPointToRay(screenPosition);
+        //  screenPosition = Input.mousePosition;
 
-       // if (Physics.Raycast(ray, out RaycastHit hitData, layersToHit))
-       // {
-      //      worldPosition = hitData.point;
-      //  }
+        //  Ray ray = Camera.main.ScreenPointToRay(screenPosition);
 
-       //  transform.position = worldPosition;
-   
+        // if (Physics.Raycast(ray, out RaycastHit hitData, layersToHit))
+        // {
+        //      worldPosition = hitData.point;
+        //  }
+
+        //  transform.position = worldPosition;
+
     }
 
 }
