@@ -25,9 +25,10 @@ public class Slide : MonoBehaviour
             if (endTouchposition.x < startTouchposition.x)
             {
                 NextPage();
+                
             }
 
-            if (endTouchposition.x < startTouchposition.x)
+            if (endTouchposition.x > startTouchposition.x)
             {
                 PreviousPage();
             }
