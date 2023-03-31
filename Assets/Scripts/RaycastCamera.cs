@@ -36,6 +36,8 @@ public class RaycastCamera : MonoBehaviour
             {
                 Debug.Log(hit.collider.gameObject.name + " was hit");
                 //objectLabel.text = hitObject.collider.gameObject.name;
+
+               
             }
         }
 
