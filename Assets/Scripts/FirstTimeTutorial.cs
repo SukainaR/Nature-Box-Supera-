@@ -5,8 +5,8 @@ using UnityEngine;
 public class FirstTimeTutorial : MonoBehaviour
 {
     // Start is called before the first frame update
-        public int IsFirst;
-    [SerializeField] private GameObject objectRunFirstTime;
+    public int IsFirst = 0;
+        [SerializeField] private GameObject objectRunFirstTime;
 
     void Start()
     {
