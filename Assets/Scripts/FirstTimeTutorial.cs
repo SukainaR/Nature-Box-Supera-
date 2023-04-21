@@ -5,27 +5,19 @@ using UnityEngine;
 public class FirstTimeTutorial : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int IsFirst = 0;
-        [SerializeField] private GameObject objectRunFirstTime;
+    [SerializeField] private GameObject objectRunFirstTime;
 
     void Start()
     {
-        IsFirst = PlayerPrefs.GetInt("IsFirst");
-        if (IsFirst == 0)
+        if (PlayerPrefs.GetInt("IsFirst") == 0)
         {
            objectRunFirstTime.SetActive(true); 
             PlayerPrefs.SetInt("IsFirst", 1);
-          
+            PlayerPrefs.Save();         
         }
         else
         {
             objectRunFirstTime.SetActive(false);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
